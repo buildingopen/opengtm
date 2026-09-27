@@ -6,8 +6,9 @@ Combines:
 - 7-point technical website audit
 - Structured output for downstream qualify/message steps
 
-Input:  domain (+ optional company name, industry)
-Output: structured dict with contact info and audit findings
+Free-tier adaptation:
+- Uses Gemini URL Context instead of Google Search grounding.
+- The supplied company website is explicitly included in the prompt.
 """
 
 from __future__ import annotations
@@ -17,7 +18,6 @@ import os
 import subprocess
 import time
 import urllib.request
-from typing import Optional
 
 from . import DEFAULT_MODEL
 
@@ -25,28 +25,68 @@ MODEL = os.environ.get("GEMINI_MODEL", DEFAULT_MODEL)
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
 
-RESEARCH_PROMPT = """Analyze the company "{company}" at website {domain} (industry: {industry}).
+RESEARCH_PROMPT = """Analyze the company "{company}" at this website:
+
+https://{domain}
+
+Industry: {industry}
+
+Use the URL Context tool to inspect the supplied website and only report
+information that can be verified from the retrieved website content.
 
 Task 1 - Find the decision-maker / main contact:
-- Check the Impressum/About/Team page for the managing director, owner, or founder
-- Find their full name, title/position
-- Find the company email address
-- Find their LinkedIn profile URL (must be linkedin.com/in/ format, NOT linkedin.com/company/)
-- CRITICAL: Only include a LinkedIn URL if you found it on the website or can verify it exists.
-  Do NOT guess or construct LinkedIn URLs from the person's name.
+- Check the About, Team, Contact, Impressum, Leadership, or similar pages
+  available from the supplied website.
+- Find their full name and title/position.
+- Find a company email address if it is explicitly shown.
+- Find their LinkedIn profile URL only if the URL is explicitly present
+  on the website.
+- The LinkedIn URL must be linkedin.com/in/ format, NOT
+  linkedin.com/company/.
+- Do NOT guess, construct, or infer LinkedIn URLs.
 
 Task 2 - Technical website audit (7 dimensions):
-1. Title tag: generic ("Home", "Welcome")? Too long (>60 chars)? Too short? Missing?
-2. Meta description: missing entirely? Too short (<120 chars)? Too long (>160 chars)?
-3. Content indexing: blog/news pages accessible? Any noindex issues? Content behind login?
-4. Broken elements: dead links (href="#"), placeholder text, broken plugin outputs?
-5. Social media links: present (LinkedIn, Twitter/X, Instagram) or completely missing?
-6. Language consistency: mixed languages across meta tags vs content?
-7. Schema markup: any structured data (JSON-LD, microdata)?
 
-IMPORTANT: Only report findings you can VERIFY from the actual website. Be specific.
+1. Title tag:
+   - Is it generic ("Home", "Welcome")?
+   - Is it too long (>60 chars)?
+   - Is it too short?
+   - Is it missing?
 
-Return ONLY valid JSON:
+2. Meta description:
+   - Is it missing?
+   - Is it too short (<120 chars)?
+   - Is it too long (>160 chars)?
+
+3. Content indexing:
+   - Is a blog/news section visibly accessible?
+   - Is relevant content behind a login?
+   - Report noindex only if the retrieved page explicitly exposes it.
+
+4. Broken elements:
+   - Report only clearly visible broken links, placeholder text,
+     dead hrefs, or broken-looking plugin/output elements.
+
+5. Social media links:
+   - Check whether visible links to LinkedIn, X/Twitter, Instagram,
+     YouTube, etc. are present.
+
+6. Language consistency:
+   - Check whether the website content and metadata appear to use
+     inconsistent languages.
+
+7. Schema markup:
+   - Report structured data only if it is visible in the retrieved
+     website content.
+
+IMPORTANT:
+- Only report findings you can VERIFY from the supplied website.
+- Do not invent contact details.
+- Do not claim Google Search results or external sources were checked.
+- Return ONLY valid JSON.
+
+Return this exact structure:
+
 {{
   "contact": {{
     "name": "Full Name or empty string if not found",
@@ -62,60 +102,135 @@ Return ONLY valid JSON:
       "evidence": "The exact text/element from the website"
     }}
   ],
-  "title_tag_text": "exact title tag text",
+  "title_tag_text": "exact title tag text or empty string",
   "meta_description_text": "exact meta description or MISSING",
   "site_language": "en|de|mixed|other",
   "has_blog_or_news": true,
   "has_social_links": true,
   "overall_assessment": "One sentence summary of the most important finding"
-}}"""
+}}
+"""
 
 
 def _gemini_call(prompt: str, timeout: int = 90) -> str:
+    """Call Gemini GenerateContent using URL Context."""
+
+    if not GEMINI_API_KEY:
+        raise ValueError("GEMINI_API_KEY environment variable is not set")
+
     api_url = (
-        f"https://generativelanguage.googleapis.com/v1beta/models/"
+        "https://generativelanguage.googleapis.com/v1beta/models/"
         f"{MODEL}:generateContent?key={GEMINI_API_KEY}"
     )
+
     payload = json.dumps({
-        "contents": [{"parts": [{"text": prompt}]}],
-        "tools": [{"google_search": {}}],
-        "generationConfig": {"temperature": 0.1},
+        "contents": [
+            {
+                "parts": [
+                    {
+                        "text": prompt
+                    }
+                ]
+            }
+        ],
+        "tools": [
+            {
+                "url_context": {}
+            }
+        ],
+        "generationConfig": {
+            "temperature": 0.1
+        },
     })
+
     result = subprocess.run(
-        ["curl", "-s", "--max-time", str(timeout),
-         "-H", "Content-Type: application/json",
-         "-d", payload, api_url],
-        capture_output=True, text=True, timeout=timeout + 10,
+        [
+            "curl",
+            "-s",
+            "--max-time",
+            str(timeout),
+            "-H",
+            "Content-Type: application/json",
+            "-d",
+            payload,
+            api_url,
+        ],
+        capture_output=True,
+        text=True,
+        timeout=timeout + 10,
     )
+
     if result.returncode != 0:
         raise RuntimeError(f"curl exit {result.returncode}")
+
     if not result.stdout.strip():
-        raise RuntimeError("Empty response")
-    data = json.loads(result.stdout)
+        raise RuntimeError("Empty response from Gemini")
+
+    try:
+        data = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        raise RuntimeError(
+            f"Invalid JSON response from Gemini: {result.stdout[:500]}"
+        )
+
     if "error" in data:
-        raise RuntimeError(f"API error: {data['error'].get('message', '')[:200]}")
+        error = data["error"]
+        code = error.get("code", "")
+        status = error.get("status", "")
+        message = error.get("message", "")
+
+        raise RuntimeError(
+            f"API error [{code} {status}]: {message[:500]}"
+        )
+
     candidates = data.get("candidates", [])
+
     if not candidates:
-        raise RuntimeError("No candidates in response")
+        raise RuntimeError("No candidates in Gemini response")
+
     parts = candidates[0].get("content", {}).get("parts", [])
-    text_parts = [p["text"] for p in parts if "text" in p]
+
+    text_parts = [
+        part["text"]
+        for part in parts
+        if isinstance(part, dict) and "text" in part
+    ]
+
+    if not text_parts:
+        raise RuntimeError("Gemini returned no text content")
+
     return "\n".join(text_parts)
 
 
 def _verify_linkedin(url: str) -> bool:
-    """Verify a LinkedIn profile URL actually exists (not hallucinated)."""
+    """Verify that a LinkedIn profile URL responds."""
+
     if not url:
         return False
+
     if "linkedin.com/in/" not in url:
         return False
+
     if "linkedin.com/company/" in url:
         return False
+
     full_url = url if url.startswith("http") else f"https://{url}"
+
     try:
-        req = urllib.request.Request(full_url, method="HEAD")
-        req.add_header("User-Agent", "Mozilla/5.0 (compatible; opengtm/0.1)")
+        req = urllib.request.Request(
+            full_url,
+            method="HEAD",
+        )
+
+        req.add_header(
+            "User-Agent",
+            "Mozilla/5.0 (compatible; opengtm/0.1)",
+        )
+
         resp = urllib.request.urlopen(req, timeout=8)
+
         return resp.status in (200, 301, 302)
+
     except Exception:
         return False
 
@@ -128,85 +243,212 @@ def research(
     verbose: bool = True,
 ) -> dict:
     """
-    Research a company: extract decision-maker contact + run website audit.
+    Research a company using Gemini + URL Context.
 
     Args:
-        domain:          Company website domain (e.g. "example.com")
-        company:         Company name (improves Gemini accuracy)
-        industry:        Industry vertical (improves audit relevance)
-        verify_linkedin: Whether to verify extracted LinkedIn URLs are real
-        verbose:         Print progress to stdout
+        domain:
+            Company website domain, e.g. example.com
+
+        company:
+            Company name.
+
+        industry:
+            Industry vertical.
+
+        verify_linkedin:
+            Whether to perform an HTTP check on extracted LinkedIn URLs.
+
+        verbose:
+            Print progress.
 
     Returns:
-        Dict with keys: contact, findings, title_tag_text, meta_description_text,
-        site_language, has_blog_or_news, has_social_links, overall_assessment
+        Structured research dictionary.
     """
+
     if not GEMINI_API_KEY:
-        raise ValueError("GEMINI_API_KEY environment variable is not set")
+        raise ValueError(
+            "GEMINI_API_KEY environment variable is not set"
+        )
 
     # Normalize domain
+    domain = domain.strip()
+
+    if domain.startswith("https://"):
+        domain = domain[8:]
+
+    elif domain.startswith("http://"):
+        domain = domain[7:]
+
     if domain.startswith("www."):
         domain = domain[4:]
 
-    comp = company or domain
+    # Remove trailing slash
+    domain = domain.rstrip("/")
+
+    comp = company.strip() or domain
+
     prompt = RESEARCH_PROMPT.format(
         domain=domain,
         company=comp,
-        industry=industry or "general",
+        industry=industry.strip() or "general",
     )
 
     if verbose:
-        print(f"[research] Analyzing {domain}...", flush=True)
+        print(
+            f"[research] Analyzing https://{domain}...",
+            flush=True,
+        )
 
     for attempt in range(3):
         try:
             text = _gemini_call(prompt, timeout=90)
+
             text = text.strip()
+
+            # Remove markdown JSON fences if Gemini returns them
             if text.startswith("```"):
-                text = text.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+                lines = text.splitlines()
+
+                if len(lines) >= 3:
+                    text = "\n".join(lines[1:-1]).strip()
 
             data = json.loads(text)
 
-            # Validate and optionally verify LinkedIn URL
-            contact = data.get("contact", {})
+            if not isinstance(data, dict):
+                raise ValueError(
+                    "Gemini returned JSON, but it is not an object"
+                )
+
+            # Ensure expected fields exist
+            data.setdefault("contact", {})
+            data.setdefault("findings", [])
+            data.setdefault("title_tag_text", "")
+            data.setdefault("meta_description_text", "MISSING")
+            data.setdefault("site_language", "unknown")
+            data.setdefault("has_blog_or_news", False)
+            data.setdefault("has_social_links", False)
+            data.setdefault(
+                "overall_assessment",
+                "",
+            )
+
+            contact = data["contact"]
+
+            contact.setdefault("name", "")
+            contact.setdefault("title", "")
+            contact.setdefault("email", None)
+            contact.setdefault("linkedin_url", None)
+
+            # Validate LinkedIn URL
             linkedin = contact.get("linkedin_url")
+
             if linkedin:
                 if verify_linkedin:
                     if not _verify_linkedin(linkedin):
                         if verbose:
-                            print(f"  LinkedIn URL unverified, dropping: {linkedin}", flush=True)
+                            print(
+                                f"  LinkedIn URL unverified, dropping: "
+                                f"{linkedin}",
+                                flush=True,
+                            )
+
                         contact["linkedin_url"] = None
+
                 else:
-                    # At minimum, validate format
-                    if "linkedin.com/in/" not in linkedin or "linkedin.com/company/" in linkedin:
+                    if (
+                        "linkedin.com/in/" not in linkedin
+                        or "linkedin.com/company/" in linkedin
+                    ):
                         contact["linkedin_url"] = None
 
             if verbose:
-                n = len(data.get("findings", []))
-                name = contact.get("name", "not found")
-                print(f"  Contact: {name} | {n} findings | {data.get('overall_assessment', '')[:60]}", flush=True)
+                finding_count = len(
+                    data.get("findings", [])
+                )
+
+                name = contact.get(
+                    "name",
+                    "not found",
+                ) or "not found"
+
+                assessment = data.get(
+                    "overall_assessment",
+                    "",
+                )
+
+                print(
+                    f"  Contact: {name} | "
+                    f"{finding_count} findings | "
+                    f"{assessment[:100]}",
+                    flush=True,
+                )
 
             return data
 
         except json.JSONDecodeError as e:
             if verbose:
-                print(f"  Attempt {attempt + 1}/3 JSON parse error: {e}", flush=True)
+                print(
+                    f"  Attempt {attempt + 1}/3 "
+                    f"JSON parse error: {e}",
+                    flush=True,
+                )
+
             if attempt < 2:
-                time.sleep(5 * (attempt + 1))
+                time.sleep(2 * (attempt + 1))
+
         except Exception as e:
+            error_text = str(e)
+
             if verbose:
-                print(f"  Attempt {attempt + 1}/3 error: {e}", flush=True)
+                print(
+                    f"  Attempt {attempt + 1}/3 error: "
+                    f"{error_text}",
+                    flush=True,
+                )
+
+            # Don't repeatedly retry quota/auth/model errors.
+            fatal_markers = (
+                "429",
+                "403",
+                "401",
+                "quota",
+                "TooManyRequests",
+                "PERMISSION_DENIED",
+                "UNAUTHENTICATED",
+                "not available to new users",
+                "is no longer available",
+            )
+
+            if any(
+                marker in error_text
+                for marker in fatal_markers
+            ):
+                if verbose:
+                    print(
+                        "  Stopping retries because this "
+                        "appears to be a quota/auth/model "
+                        "configuration error.",
+                        flush=True,
+                    )
+
+                break
+
             if attempt < 2:
-                time.sleep(4 * (attempt + 1))
+                time.sleep(3 * (attempt + 1))
 
     # Return empty-but-valid structure on total failure
     return {
-        "contact": {"name": "", "title": "", "email": None, "linkedin_url": None},
+        "contact": {
+            "name": "",
+            "title": "",
+            "email": None,
+            "linkedin_url": None,
+        },
         "findings": [],
         "title_tag_text": "",
         "meta_description_text": "MISSING",
         "site_language": "unknown",
         "has_blog_or_news": False,
         "has_social_links": False,
-        "overall_assessment": "Research failed after 3 attempts",
+        "overall_assessment": "Research failed after available attempts",
     }
