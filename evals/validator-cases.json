@@ -1,0 +1,2568 @@
+[
+  {
+    "id": "complete-clean",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "pass",
+      "code": null
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "success"
+    }
+  },
+  {
+    "id": "www-canonical",
+    "input": {
+      "lead": {
+        "domain": "www.example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "pass",
+      "code": null
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "success"
+    }
+  },
+  {
+    "id": "case-insensitive-term",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "api supports WORKFLOW"
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our api supports WORKFLOW automation.",
+        "content_text": "Our api supports WORKFLOW automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "pass",
+      "code": null
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "success"
+    }
+  },
+  {
+    "id": "missing-independent-source",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": null,
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "review",
+      "outreach": "review",
+      "code": "independent_source_required"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "ambiguous"
+    }
+  },
+  {
+    "id": "self-attested-verification",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": null
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "review",
+      "code": "trusted_clearance_required"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "ambiguous"
+    }
+  },
+  {
+    "id": "public-form-is-not-recipient",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": null,
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ],
+          "routes": [
+            {
+              "url": "https://example.test/contact-sales"
+            }
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": null
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "review",
+      "code": "recipient_missing"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "ambiguous"
+    }
+  },
+  {
+    "id": "wrong-recipient",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "someone@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "reject",
+      "code": "clearance_recipient_mismatch"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "undeliverable-recipient",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": false,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "reject",
+      "code": "recipient_not_deliverable"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "account-not-reviewed",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": false
+      }
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "review",
+      "code": "account_review_required"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "ambiguous"
+    }
+  },
+  {
+    "id": "expired-clearance",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-10-01T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "review",
+      "code": "clearance_expired"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "ambiguous"
+    }
+  },
+  {
+    "id": "future-clearance",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-12-01T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "review",
+      "code": "clearance_expired"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "ambiguous"
+    }
+  },
+  {
+    "id": "invalid-email",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "not an email",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "reject",
+      "code": "invalid_recipient"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "stale-evidence",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-09-01T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "review",
+      "outreach": "review",
+      "code": "stale_evidence"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "ambiguous"
+    }
+  },
+  {
+    "id": "future-evidence",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2027-01-01T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "future_evidence"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "naive-timestamp",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "invalid_evidence_timestamp"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "missing-timestamp",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": null,
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "invalid_evidence_timestamp"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "digest-changed",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "review",
+      "outreach": "review",
+      "code": "source_snapshot_changed"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "ambiguous"
+    }
+  },
+  {
+    "id": "digest-invalid",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "forged",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "invalid_source_digest"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "quote-invented",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Raised $90 million yesterday"
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "quote_not_in_source"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "quote-empty",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            ""
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "invalid_source_quotes"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "cross-company-source",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://other.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "fresh_source_domain_mismatch"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "lookalike-source",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test.evil.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "source_domain_mismatch"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "credential-url",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://secret:password@example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "invalid_company_domain"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "http-url",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "http://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "invalid_company_domain"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "private-ip-source",
+    "input": {
+      "lead": {
+        "domain": "127.0.0.1",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "invalid_company_domain"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "navigation-only",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "We sell garden tools."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "insufficient_body_signals"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "api-in-capital",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our capital funds workflow expansion."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our capital funds workflow expansion.",
+        "content_text": "Our capital funds workflow expansion."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "insufficient_body_signals"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "fabricated-signal",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "raised millions"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "unsupported_signal_claim"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "empty-policy",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "invalid_policy"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "empty-policy-group",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          []
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "invalid_policy"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "policy-shape",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": null
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "invalid_policy"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "existing-customer",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": [
+          "https://www.example.test/"
+        ]
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "existing_customer"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "duplicate",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      },
+      "seen_domains": [
+        "example.test"
+      ]
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "duplicate_account"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "unverified-growth-draft",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place. Your revenue grew 500%."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "reject",
+      "code": "unsupported_draft_content"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "misleading-claim-draft",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your workflows are broken and we can save $10000."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "pass",
+      "outreach": "reject",
+      "code": "unsupported_draft_content"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "failed-research",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_failed",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "research_failed"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "insufficient-research",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "insufficient_evidence",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": {
+          "url": "https://example.test/",
+          "fetched_at": "2026-11-26T12:00:00+00:00",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "excerpts": [
+            "Our API supports workflow automation."
+          ]
+        },
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "research_not_qualified"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "missing-evidence",
+    "input": {
+      "lead": {
+        "domain": "example.test",
+        "source_url": "https://example.test/",
+        "status": "research_qualified",
+        "signals": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "contact_email": "buyer@example.test",
+        "email_status": "verified",
+        "ready_for_outreach": true,
+        "evidence": null,
+        "draft_outreach": "Your public site mentions API and workflow. Would it be useful to explore a tracing pilot? I would first want to understand which evaluation stack is in place."
+      },
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "evidence_missing"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  },
+  {
+    "id": "malformed-lead",
+    "input": {
+      "lead": [
+        "not-an-object"
+      ],
+      "policy": {
+        "name": "Synthetic seller",
+        "signal_groups": [
+          [
+            "API"
+          ],
+          [
+            "workflow"
+          ]
+        ],
+        "conversation": "a tracing pilot",
+        "validation_question": "which evaluation stack is in place",
+        "existing_customers": []
+      },
+      "page": {
+        "url": "https://example.test/",
+        "fetched_at": "2026-11-26T12:00:00+00:00",
+        "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "text": "Our API supports workflow automation.",
+        "content_text": "Our API supports workflow automation."
+      },
+      "now": "2026-11-26T12:00:00+00:00",
+      "clearance": {
+        "recipient": "buyer@example.test",
+        "issued_at": "2026-11-26T12:00:00+00:00",
+        "deliverable": true,
+        "account_reviewed": true
+      }
+    },
+    "expected": {
+      "research": "reject",
+      "outreach": "reject",
+      "code": "invalid_record"
+    },
+    "metadata": {
+      "provenance": "synthetic",
+      "label": "failure"
+    }
+  }
+]

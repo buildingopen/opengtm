@@ -48,6 +48,7 @@ where = ["."]
 include = ["opengtm*"]
 
 [project.optional-dependencies]
+traceroot = ["traceroot==0.5.1; python_version >= '3.11'"]
 dev = [
     "pytest>=8.0.0",
     "pytest-cov>=5.0.0",
