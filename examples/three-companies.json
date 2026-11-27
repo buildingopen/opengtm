@@ -1,0 +1,217 @@
+{
+  "sellers": [
+    {
+      "name": "Selfin",
+      "url": "https://selfin.app/",
+      "positioning_groups": [
+        [
+          "liquidity"
+        ],
+        [
+          "risk"
+        ]
+      ],
+      "signal_groups": [
+        [
+          "GPU"
+        ],
+        [
+          "pricing",
+          "per hour",
+          "hourly",
+          "on-demand"
+        ]
+      ],
+      "buyer_role": "CFO / Head of Treasury / Finance",
+      "conversation": "whether event-risk exposure around GPU rental economics is material to your business",
+      "validation_question": "who owns revenue-risk decisions and whether the exposure is unhedged",
+      "candidates": [
+        {
+          "company": "Runpod",
+          "url": "https://www.runpod.io/pricing",
+          "observation": "a GPU cloud platform with usage-based pricing",
+          "hypothesis": "GPU rental revenue is a plausible exposure category in Selfin\u2019s current positioning; actual exposure and eligibility need discovery"
+        },
+        {
+          "company": "Lambda",
+          "url": "https://lambda.com/service/gpu-cloud",
+          "observation": "cloud GPU capacity for AI workloads",
+          "hypothesis": "Compute rental economics could be relevant to revenue-risk discovery; no hedging need is established"
+        },
+        {
+          "company": "Crusoe",
+          "url": "https://www.crusoe.ai/cloud/pricing",
+          "observation": "priced GPU cloud infrastructure",
+          "hypothesis": "GPU infrastructure revenue may justify a finance conversation about event exposure; no product suitability is asserted"
+        }
+      ],
+      "gtm_profile": {
+        "pilot_offer": "A discovery call with finance to identify one material event exposure and establish eligibility before discussing any product",
+        "timing_rules": [
+          {
+            "code": "published_pricing_update",
+            "groups": [
+              [
+                "Updated"
+              ],
+              [
+                "pricing"
+              ]
+            ],
+            "date_text": "November 12, 2026",
+            "weight": 20
+          }
+        ],
+        "risk_rules": []
+      }
+    },
+    {
+      "name": "Overlap",
+      "url": "https://overlap.ai/",
+      "positioning_groups": [
+        [
+          "video"
+        ],
+        [
+          "clips",
+          "clipping"
+        ]
+      ],
+      "signal_groups": [
+        [
+          "podcast",
+          "episodes"
+        ],
+        [
+          "youtube",
+          "video"
+        ]
+      ],
+      "buyer_role": "Head of Content / Executive Producer / Audience Growth",
+      "conversation": "a small pilot turning selected long-form episodes into reviewable short clips",
+      "validation_question": "whether clipping is already covered in-house or by another vendor",
+      "existing_customers": [
+        "iheartmedia.com",
+        "ycombinator.com"
+      ],
+      "candidates": [
+        {
+          "company": "Acquired",
+          "url": "https://www.acquired.fm/",
+          "observation": "a long-form business podcast with video distribution",
+          "hypothesis": "An episode archive and video channel are plausible source material for a clipping workflow; existing editing capability is unknown"
+        },
+        {
+          "company": "Huberman Lab",
+          "url": "https://www.hubermanlab.com/podcast",
+          "observation": "a recurring podcast with video episodes",
+          "hypothesis": "An extensive episode library could support repurposing; this may already be handled by its production team"
+        },
+        {
+          "company": "Lex Fridman Podcast",
+          "url": "https://lexfridman.com/podcast/",
+          "observation": "a long-form interview podcast with YouTube distribution",
+          "hypothesis": "Long interviews support a testable clip-repurposing use case; an existing clips operation could reduce the opportunity"
+        },
+        {
+          "company": "iHeartMedia",
+          "url": "https://www.iheartmedia.com/",
+          "observation": "",
+          "hypothesis": ""
+        },
+        {
+          "company": "Y Combinator",
+          "url": "https://www.ycombinator.com/",
+          "observation": "",
+          "hypothesis": ""
+        },
+        {
+          "company": "Acquired duplicate",
+          "url": "https://acquired.fm/",
+          "observation": "",
+          "hypothesis": ""
+        }
+      ],
+      "gtm_profile": {
+        "pilot_offer": "A review-only pilot on one authorized episode, with production sign-off and a defined handoff",
+        "timing_rules": [],
+        "risk_rules": [
+          {
+            "code": "existing_clipping_capability",
+            "groups": [
+              [
+                "clips",
+                "shorts"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "TraceRoot",
+      "url": "https://traceroot.ai/",
+      "positioning_groups": [
+        [
+          "agent"
+        ],
+        [
+          "trace",
+          "tracing"
+        ]
+      ],
+      "signal_groups": [
+        [
+          "agent"
+        ],
+        [
+          "API",
+          "developer",
+          "workflow",
+          "browser"
+        ]
+      ],
+      "buyer_role": "CTO / Head of AI Engineering / Agent Infrastructure",
+      "conversation": "a small tracing and regression-evaluation pilot for an agent workflow",
+      "validation_question": "which observability and evaluation stack is already in place",
+      "candidates": [
+        {
+          "company": "Browser Use",
+          "url": "https://browser-use.com/",
+          "observation": "browser agents and cloud browser infrastructure",
+          "hypothesis": "Browser-agent tool sequences are relevant to trace inspection and regression checks; current observability vendor is unknown"
+        },
+        {
+          "company": "Firecrawl",
+          "url": "https://www.firecrawl.dev/",
+          "observation": "web data infrastructure for AI agents",
+          "hypothesis": "Agent-facing extraction and workflow infrastructure is relevant, but internal agent ownership and buying intent need validation"
+        },
+        {
+          "company": "Gumloop",
+          "url": "https://www.gumloop.com/",
+          "observation": "an AI agent platform with workflow automation",
+          "hypothesis": "Multi-tool agent workflows are a plausible tracing/evaluation use case; existing built-in observability may reduce fit"
+        }
+      ],
+      "gtm_profile": {
+        "pilot_offer": "Trace and evaluate one recurring agent failure, then compare the same cases before and after a fix",
+        "timing_rules": [],
+        "risk_rules": [
+          {
+            "code": "existing_evaluation_capability",
+            "groups": [
+              [
+                "observability",
+                "evals",
+                "evaluation"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "seed_provenance": "Manually selected from current public official sources; not autonomous search discovery",
+  "exclusions_provenance": "Overlap homepage names iHeartMedia and Y Combinator as customer logos"
+}

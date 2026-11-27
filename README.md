@@ -427,3 +427,20 @@ Open an issue first for significant changes.
 ## License
 
 MIT License. Copyright 2026 Federico De Ponte.
+
+## Evidence-backed public prospect research
+
+Research curated account seeds without a model key, validate their source evidence,
+prioritize seller-specific discovery work, and keep recipient clearance separate
+from account fit. Existing discovery, research, messaging and CRM commands keep
+their current behavior.
+
+```sh
+python -m opengtm.public --input examples/three-companies.json --output /tmp/leads --workers 3 --cache-ttl 300
+python -m pytest tests -q
+```
+
+See [lead validation](docs/lead-validation.md), [live public research](docs/traceroot/live-prospecting.md),
+and [measured efficiency and limitations](docs/traceroot/gtm-efficiency.md).
+TraceRoot is optional on Python 3.11+: install `.[traceroot]` to run the local SDK
+export demo or benchmark. Base research and validation support Python 3.10+.
